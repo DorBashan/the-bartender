@@ -9,7 +9,7 @@ build:
 deploy:
   kubectl:
     manifests:
-      - bartender-be/k8s/k8s-*
+      - bartender-backend/k8s/k8s-*
       - bartender-web/k8s/k8s-*
 
 portForward:
