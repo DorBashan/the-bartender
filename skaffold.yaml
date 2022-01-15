@@ -1,0 +1,26 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+build:
+  artifacts:
+  - image: bartender-be
+    context: bartender-be
+  - image: bartender-web
+    context: bartender-web
+deploy:
+  kubectl:
+    manifests:
+      - bartender-be/k8s/k8s-*
+      - bartender-web/k8s/k8s-*
+
+portForward:
+  - resourceType: pod
+    resourceName: bartender-be
+    namespace: default
+    port: 3001
+    localPort: 3001
+  - resourceType: pod
+    resourceName: bartender-web
+    namespace: default
+    port: 3000
+    localPort: 3000
+
