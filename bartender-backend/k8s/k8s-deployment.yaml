@@ -17,3 +17,15 @@ spec:
       containers:
         - name: bartender-backend
           image: bartender-backend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bartender-backend
+spec:
+  selector:
+    app: bartender-backend
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001

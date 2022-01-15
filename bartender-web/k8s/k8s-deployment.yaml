@@ -17,3 +17,15 @@ spec:
       containers:
         - name: bartender-web
           image: bartender-web
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bartender-web
+spec:
+  selector:
+    app: bartender-web
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
