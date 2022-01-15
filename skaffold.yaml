@@ -2,8 +2,8 @@ apiVersion: skaffold/v2beta26
 kind: Config
 build:
   artifacts:
-  - image: bartender-be
-    context: bartender-be
+  - image: bartender-backend
+    context: bartender-backend
   - image: bartender-web
     context: bartender-web
 deploy:
@@ -14,7 +14,7 @@ deploy:
 
 portForward:
   - resourceType: pod
-    resourceName: bartender-be
+    resourceName: bartender-backend
     namespace: default
     port: 3001
     localPort: 3001
