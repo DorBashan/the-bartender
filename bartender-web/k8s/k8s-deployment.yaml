@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bartender-web
+  labels:
+    app: bartender-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bartender-web
+  template:
+    metadata:
+      labels:
+        app: bartender-web
+    spec:
+      containers:
+        - name: bartender-web
+          image: bartender-web

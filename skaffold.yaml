@@ -13,12 +13,12 @@ deploy:
       - bartender-web/k8s/k8s-*
 
 portForward:
-  - resourceType: pod
+  - resourceType: deployment
     resourceName: bartender-backend
     namespace: default
     port: 3001
     localPort: 3001
-  - resourceType: pod
+  - resourceType: deployment
     resourceName: bartender-web
     namespace: default
     port: 3000
